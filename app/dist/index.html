@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="validation">
+
+  <head>
+  <title>Rackspace RDC</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css" />
+    <script src="https://code.angularjs.org/1.3.0-rc.2/angular.js"></script>
+    <script src="https://code.angularjs.org/1.3.0-rc.2/angular-messages.js"></script>
+    <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/maincontroller.js"></script>
+  </head>
+
+ 
+<body  ng-controller="registration">
+    <div class="jumbotron">
+        <h1><image  src="images/rackspace_logo.gif" class="img-circle" width="140" height="" alt="rackspace">Rackspace RDC<sub></sub></h1>
+    </div>
+   
+    <div class="container">
+    <form name="registrationForm" novalidate  class="text-center">
+          
+       <div class="form-group">
+             <label id="name">Enter Rackspace mail@ID:</label>
+             <input id="user" placeholder="user@rackspace.com" type="email" name="email" ng-model="email" class="form-control" ng-pattern="/^[A-Za-z0-9._%+-]+@rackspace.com$/" title="Enter RackSpace mail@ID" data-toggle="popover"  data-placement="bottom" required/>
+
+             <div ng-show="registrationForm.$invalid"><font style="margin-left:-60px;" color="red">*Field required</div></font>
+                  <!--{{registrationForm.name}}-->
+             <!-- <div ng-show="registrationForm.email.$error.required"><font style="margin-left:-63px;" color="red">*Field required
+             </font></div> -->
+             <!--<div ng-show="registrationForm.email.$error.email"> <font style="margin-left:-17px;"color="red">*invalid email address</font></div>-->
+        </div>
+        
+        <div class="form-group" style="margin-left:-113px">
+               <button type="button" class="btn btn-primary" ng-disabled="registrationForm.$invalid" style="margin-left:113px" ng-click="Submit()">Submit</button>
+               <button type="reset" class="btn btn-primary" ng-click="reset()">Reset</button>
+            
+        </div>
+         
+    </form> 
+    <script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();   
+});
+</script>
+        </script>
+    </div>
+  </body>
+
+</html>
