@@ -1,0 +1,12 @@
+npm-debug.log
+node_modules
+
+# Common mac files:
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# Thumbnails
+._*
+
